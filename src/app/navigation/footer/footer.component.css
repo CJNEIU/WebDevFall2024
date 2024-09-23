@@ -1,0 +1,10 @@
+.CSS {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #666;
+  flex-direction: column;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
