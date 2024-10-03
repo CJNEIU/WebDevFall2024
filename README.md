@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+HEAD
 =======
 # WebDevFall2024
 
