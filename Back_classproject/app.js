@@ -5,7 +5,7 @@ import Post from "./model/post.js";
 
 mongoose
   .connect(
-    "mongodb+srv://cknwankwo:n56CiW2T4NIeK77a@cluster0.zxg2p.mongodb.net/Project0?retryWrites=true&w=majority&appName=Cluster0"
+    process.env.MONGODB_KEY
   )
   .then(() => {
     console.log("conneted to DB");
