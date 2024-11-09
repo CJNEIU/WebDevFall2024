@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { PostListsComponent } from './posts/post-lists/post-lists.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -33,12 +34,12 @@ import { HttpClientModule } from '@angular/common/http';
     // Angular material Imports
     BrowserAnimationsModule,
     FormsModule,
-    
     MatButtonModule,
     MatCardModule,
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
+    MatProgressSpinnerModule,
     MatToolbarModule,
   ],
   providers: [provideAnimationsAsync()],
