@@ -1,9 +1,10 @@
 import express from "express";
 import Post from "../model/post.js";
+import checkAuth from "../middleware/check-auth.js";
 
 const router = express.Router();
 
-router.post("", (req, res, next) => {
+router.post("", checkAuth,(req, res, next) => {
   // const post = req.body;
 
   const post = new Post({
@@ -11,14 +12,14 @@ router.post("", (req, res, next) => {
     content: req.body.content,
   });
 
-  console.log(post);
+  console.log(post); 
   post.save().then((result) => {
     // console.log(result);
     res.status(201).json({ success: true, postId: result._id });
   });
 });
 
-router.put("/:id", (req, res, next) => {
+router.put("/:id", checkAuth, (req, res, next) => {
   console.log("put operation");
   const post = new Post({
     _id: req.body.id,
@@ -50,7 +51,7 @@ router.get("/:id", (req, res, next) => {
   });
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", checkAuth, (req, res) => {
   Post.deleteOne({ _id: req.params.id }).then((result) => {
     console.log(result);
     res.status(200).json({ success: true });

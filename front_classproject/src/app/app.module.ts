@@ -16,8 +16,11 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { PostListsComponent } from './posts/post-lists/post-lists.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { AuthInterceptor } from './auth/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     FooterComponent,
     CreatePostComponent,
     PostListsComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -42,7 +47,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatProgressSpinnerModule,
     MatToolbarModule,
   ],
-  providers: [provideAnimationsAsync()],
+  providers: [provideAnimationsAsync(),{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor, multi:true}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
