@@ -1,0 +1,12 @@
+.extra-container{
+    padding-top: 20px; /* Space below the header */
+    padding-bottom: 20px; /* Space above the footer */
+    margin: auto;
+    display: grid;
+    justify-items: center
+}
+
+.extra-container img{
+    height: 500px;
+    width: 500px;
+}

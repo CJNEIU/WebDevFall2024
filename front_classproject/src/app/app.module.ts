@@ -21,6 +21,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AuthInterceptor } from './auth/auth-interceptor';
+import { ExtraComponent } from './extra/extra.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AuthInterceptor } from './auth/auth-interceptor';
     PostListsComponent,
     LoginComponent,
     SignupComponent,
+    ExtraComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -47,7 +49,10 @@ import { AuthInterceptor } from './auth/auth-interceptor';
     MatProgressSpinnerModule,
     MatToolbarModule,
   ],
-  providers: [provideAnimationsAsync(),{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor, multi:true}],
+  providers: [
+    provideAnimationsAsync(),
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
