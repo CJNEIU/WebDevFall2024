@@ -6,8 +6,11 @@ Create, edit, and delete their posts.
 Enjoy an additional feature where users (and non-users) can view random dog pictures fetched from the [Dog CEO API](https://dog.ceo/api/breeds/image/random).
 
 Technology Stack:
+
 Frontend: [Angular](https://angular.dev/)
+
 Backend: [Node.js](https://nodejs.org/en)
+
 Database: [MongoDB](https://www.mongodb.com/)
 
 Features 📌
